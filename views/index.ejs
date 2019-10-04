@@ -3,31 +3,24 @@
   <head>
     <meta http-equiv="Content-Type" const="text/html;charset=UTF-8" />
     <link href="http://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet" type="text/css">
-    <!--<link rel="stylesheet" type="text/css" href="style.css" > -->
+    <link rel="stylesheet" type="text/css" href="style.css" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" type="text/css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
     <link rel="stylesheet" href = "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <title>Simple Chat App</title>
   </head>
 
-  <body>
+  <body style="background-color:#e6e6e6">
     <header>
-      <div class="p-3 mb-2 bg-dark text-white"><h1 align="center">Defendant Advisor</h1></div>
+      <div class="p-3 mb-2 bg-dark text-white"><h1 align="center"><i class="fa fa-gavel"></i>  Defendant Advisor  <i class="fa fa-balance-scale"></i></i></h1></div>
     </header>
 
-    <section>
-      <div id="change_username">
-	<input id="username" type="text" />
-	<button id="send_username" type="button">Change username</button>
-      </div>
-    </section>
-
-    <section id="chatroom">
+    <section id="chatroom" style="background-color: white; border: 2px inset rgb(5, 5, 5);">
       <section id="feedback"></section>
     </section>
 
     
-
-    <section id="input_zone"> 
+    <section id="input_zone" style="border:2px"> 
       <input id="message" class="vertical-align" type="text" />
       <button id="send_message" class="vertical-align" type="button">Send</button>
     </section>

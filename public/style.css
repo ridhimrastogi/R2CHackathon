@@ -17,6 +17,7 @@ html {
 body {
     margin: 0px;
     height: 100%;
+    
 }
 
 header {
@@ -29,25 +30,29 @@ h1 {
 }
 
 div#change_username, section#input_zone {
-    border: 5px outset #8258FA;
+    border: 2px outset rgb(5, 5, 5);
 }
 
 div#change_username {
     height: 3%;
     display: inline-block;
-    background-color: #BCA9F5;
+    background-color: rgb(5, 5, 5);
 }
 
 section#chatroom {
-    border: 5px inset #8258FA;
-    height: 85%;
+    border: 2px inset rgb(5, 5, 5);
+    height: 80%;
     overflow: auto;
+    margin-left: 22%;
+    margin-right: 22%;
 }
 
 section#input_zone {
     height: 7%;
     text-align: center;
-    background-color: #BCA9F5;
+    background-color: rgb(5, 5, 5);
+    margin-left: 22%;
+    margin-right: 22%;
 }
 
 .vertical-align {
