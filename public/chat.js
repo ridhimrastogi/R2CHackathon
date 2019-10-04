@@ -52,44 +52,52 @@ function parse_message(message, chatroom) {
 		message = handle_case1(chatroom);
 	}
 	//Case 2: 
-	if (message.includes("landlord") &&  message.includes("evict")) {
+	else if (message.includes("landlord") &&  message.includes("evict")) {
 		message = handle_case2();
 	}
 	//Case 1: Check Validity
-	if (message.includes("landlord") &&  message.includes("evict")) {
+	else if (message.includes("landlord") &&  message.includes("evict")) {
 		message = handle_case3();	
 	}
 	//Case 1: Check Validity
-	if (message.includes("landlord") &&  message.includes("evict")) {
+	else if (message.includes("landlord") &&  message.includes("evict")) {
 		message = handle_case4();	
 	}
 	//Case 1: Check Validity
-	if (message.includes("landlord") &&  message.includes("evict")) {
+	else if (message.includes("landlord") &&  message.includes("evict")) {
 		message = handle_case5();	
 	}
 	//Case 1: Check Validity
-	if (message.includes("landlord") &&  message.includes("evict")) {
+	else if (message.includes("landlord") &&  message.includes("evict")) {
 		message = handle_case6	();	
 	}
 	//Case 1: Check Validity
-	if (message.includes("landlord") &&  message.includes("evict")) {
+	else if (message.includes("landlord") &&  message.includes("evict")) {
 			
 	}
 	//Case 1: Check Validity
-	if (message.includes("landlord") &&  message.includes("evict")) {
+	else if (message.includes("landlord") &&  message.includes("evict")) {
 			
 	}
-
-	handle_fail_case();
+	else {
+		handle_fail_case(chatroom);
+	}
 }
 
 
 
 function handle_case1(chatroom) {
 	chatroom.append("<p class='bot-message'>" + "See you in the small claim court.(NC) :P" + "</p>");
-	return "nothing";
+	//return "nothing";
 }
 
+function handle_fail_case(chatroom) {
+	chatroom.append("<p class='bot-message'>" + "Sorry, we cannot help you right now. Here are some links that might be of use to you" + "</p>");
+	chatroom.append("<p class='bot-message'>" + "Sorry, we cannot help you right now. Here are some links that might be of use to you" + "</p>");
+	chatroom.append("<p class='bot-message'>" + "Sorry, we cannot help you right now. Here are some links that might be of use to you" + "</p>");
+	chatroom.append("<p class='bot-message'>" + "Sorry, we cannot help you right now. Here are some links that might be of use to you" + "</p>");
+	//return "nothing";
+}
 
 
 String.prototype.removeStopWords = function() {
