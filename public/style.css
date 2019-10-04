@@ -92,3 +92,8 @@ p.message {
 .message:nth-child(odd) {
     background-color: #81BEF7;
 }
+
+.bot-message {
+    float: right;
+    background-color: #4bd624;
+}
