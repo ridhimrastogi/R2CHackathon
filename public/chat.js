@@ -55,7 +55,7 @@ function parse_message(message, chatroom) {
 		message = handle_case2(chatroom);
 	}
 	//Case 3: Counterclaim
-	else if (message.includes("yes") &&  message.includes("counterclaim")) {
+	else if (message.includes("file") &&  message.includes("counterclaim")) {
 		message = handle_case3(chatroom);	
 	}
 	//Case 4: Prepare for a trial
@@ -63,7 +63,7 @@ function parse_message(message, chatroom) {
 		message = handle_case4(chatroom);	
 	}
 	//Case 5: Settling out of court
-	else if (message.includes("settle") &&  message.includes("no")) {
+	else if (message.includes("settl") &&  message.includes("no")) {
 		message = handle_case5(chatroom);	
 	}
 	//Case 6: Trial events
@@ -75,7 +75,7 @@ function parse_message(message, chatroom) {
 		message = handle_case7(chatroom);	
 	}
 	//Case 8: Exit
-	else if (message.includes("thank you") ) {
+	else if (message.includes("Thank you") ) {
 		handle_exit_case(chatroom);	
 	}
 	else {
@@ -161,7 +161,7 @@ async function handle_case4(chatroom) {
 
 async function handle_case5(chatroom) {
 	await sleep(1000);
-	var result = "You shouldn't just settle to keep from going to court";
+	var result = "Good. You shouldn't just settle to keep from going to court";
 	chatroom.append("<p class='bot-message'>" + result + "</p>");
 
 	result = "If you do reach a settlement before the \
