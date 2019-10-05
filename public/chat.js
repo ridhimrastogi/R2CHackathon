@@ -20,7 +20,6 @@ $(function(){
 	socket.on("new_message", (data) => {
 		feedback.html('');
 		message.val('');
-
 		chatroom.append("<p class='message'>" + data.username + ": " + data.message  + "</p>");
 		parse_message(data.message,chatroom);
 	})
@@ -46,50 +45,80 @@ $(function(){
 
 
 function parse_message(message, chatroom) {
-	message = message.removeStopWords();
+	//message = message.removeStopWords();
 	//Case 1: Check Validity
 	if (message.includes("landlord") &&  message.includes("evict")) {
 		message = handle_case1(chatroom);
 	}
-	//Case 2: 
-	if (message.includes("landlord") &&  message.includes("evict")) {
-		message = handle_case2();
+	//Case 2: Summon and hearing date
+	else if (message.includes("summons") &&  message.includes("hearing")) {
+		message = handle_case2(chatroom);
 	}
-	//Case 1: Check Validity
-	if (message.includes("landlord") &&  message.includes("evict")) {
-		message = handle_case3();	
+	//Case 3: Counterclaim
+	else if (message.includes("yes") &&  message.includes("counterclaim")) {
+		message = handle_case3(chatroom);	
 	}
-	//Case 1: Check Validity
-	if (message.includes("landlord") &&  message.includes("evict")) {
+	//Case 4: Prepare for a trial
+	else if (message.includes("prepare") &&  message.includes("trial")) {
 		message = handle_case4();	
 	}
-	//Case 1: Check Validity
-	if (message.includes("landlord") &&  message.includes("evict")) {
+	//Case 5: Settling out of court
+	else if (message.includes("settle") &&  message.includes("no")) {
 		message = handle_case5();	
 	}
-	//Case 1: Check Validity
-	if (message.includes("landlord") &&  message.includes("evict")) {
-		message = handle_case6	();	
+	//Case 6: Trial events
+	else if (message.includes("happens") &&  message.includes("trial")) {
+		message = handle_case6();	
 	}
-	//Case 1: Check Validity
-	if (message.includes("landlord") &&  message.includes("evict")) {
-			
+	//Case 7: After the trial - Defeat
+	else if (message.includes("lost") &&  message.includes("trial")) {
+		message = handle_case7();	
 	}
-	//Case 1: Check Validity
-	if (message.includes("landlord") &&  message.includes("evict")) {
-			
+	//Case 8: Exit
+	else if (message.includes("thank you") ) {
+		handle_exit_case(chatroom);	
 	}
-
-	handle_fail_case();
+	else {
+		handle_fail_case(chatroom);
+	}
 }
 
 
 
 function handle_case1(chatroom) {
-	chatroom.append("<p class='bot-message'>" + "See you in the small claim court.(NC) :P" + "</p>");
-	return "nothing";
+	chatroom.append("<p class='bot-message'>" + "You have come to the right place. Calm down and give me the details." + "</p>");
+	//return "nothing";
 }
 
+function handle_case2(chatroom) {
+	var result = "Something doesn't seem right. You should recieve summons atleast 2 days before the hearing date. \
+	Try informing the magistrate and asking for an extension. In the mean time you should prepare an answer or decide if you want to file a counterclaim.";
+	chatroom.append("<p class='bot-message'>" + result + "</p>");
+	//return "nothing";
+}
+
+function handle_case3(chatroom) {
+	var result = "To file a counterclaim, you need to write an \
+	answer to the complaint you get. Write what \
+	your claim is and your answer to what the plaintiff says under the heading 'Answer and Counterclaim.' Take the written answer and counterclaim to the clerk of court on or before the day of \
+	your trial and pay a $96 filing fee or complete the Petition to Sue as Indigent Form. Don't forget to include a signed statement of how you will give \
+	these papers to the defendant, which you can \
+	do in person or by regular mail. Finish this \
+	before the time set for the trial.";
+	chatroom.append("<p class='bot-message'>" + result + "</p>");
+	//return "nothing";
+}
+
+function handle_exit_case(chatroom) {
+	chatroom.append("<p class='bot-message'>" + "Glad I could help. Wish you all the best for the trial." + "</p>");
+	//return "nothing";
+}
+
+function handle_fail_case(chatroom) {
+	var result = "Sorry, we cannot help you right now. Why do not you try the office of legal aid./n Here are their contact details" +
+	"Legal Aid of North Carolina, Inc. Call 866-219-5262, or apply online at http://ww2.legalaidnc.org/apply";
+	chatroom.append("<p class='bot-message'>" + result + "</p>");
+}
 
 
 String.prototype.removeStopWords = function() {
