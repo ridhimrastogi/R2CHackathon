@@ -83,40 +83,82 @@ function parse_message(message, chatroom) {
 	}
 }
 
+function sleep(ms) {
+	return new Promise(resolve => setTimeout(resolve, ms));
+  }
 
-
-function handle_case1(chatroom) {
+async function handle_case1(chatroom) {
+	await sleep(2000);
 	chatroom.append("<p class='bot-message'>" + "You have come to the right place. Calm down and give me the details." + "</p>");
 	//return "nothing";
 }
 
-function handle_case2(chatroom) {
-	var result = "Something doesn't seem right. You should recieve summons atleast 2 days before the hearing date. \
-	Try informing the magistrate and asking for an extension. In the mean time you should prepare an answer or decide if you want to file a counterclaim.";
+async function handle_case2(chatroom) {
+	await sleep(2000);
+	var result = "Something doesn't seem right. You should recieve summons atleast 2 days before the hearing date.";
+	chatroom.append("<p class='bot-message'>" + result + "</p>");
+	
+	result = "Try informing the magistrate and asking for an extension. In the mean time you should prepare an answer or decide if you want to file a counterclaim.";
+	await sleep(5000);
 	chatroom.append("<p class='bot-message'>" + result + "</p>");
 	//return "nothing";
 }
 
-function handle_case3(chatroom) {
+async function handle_case3(chatroom) {
+	await sleep(2000);
 	var result = "To file a counterclaim, you need to write an \
 	answer to the complaint you get. Write what \
-	your claim is and your answer to what the plaintiff says under the heading 'Answer and Counterclaim.' Take the written answer and counterclaim to the clerk of court on or before the day of \
+	your claim is and your answer to what the plaintiff says under the heading 'Answer and Counterclaim.'";
+	await sleep(5000);
+	chatroom.append("<p class='bot-message'>" + result + "</p>");
+
+	result = "Take the written answer and counterclaim to the clerk of court on or before the day of \
 	your trial and pay a $96 filing fee or complete the Petition to Sue as Indigent Form. Don't forget to include a signed statement of how you will give \
 	these papers to the defendant, which you can \
-	do in person or by regular mail. Finish this \
-	before the time set for the trial.";
+	do in person or by regular mail."
+	await sleep(5000);
+	chatroom.append("<p class='bot-message'>" + result + "</p>");
+
+	result = "Remember to finish this before the time set for the trial.";
+	await sleep(5000);
 	chatroom.append("<p class='bot-message'>" + result + "</p>");
 	//return "nothing";
 }
 
-function handle_exit_case(chatroom) {
+async function handle_case4(chatroom) {
+	await sleep(2000);
+	var result = "To file a counterclaim, you need to write an \
+	answer to the complaint you get. Write what \
+	your claim is and your answer to what the plaintiff says under the heading 'Answer and Counterclaim.'";
+	await sleep(5000);
+	chatroom.append("<p class='bot-message'>" + result + "</p>");
+
+	result = "Take the written answer and counterclaim to the clerk of court on or before the day of \
+	your trial and pay a $96 filing fee or complete the Petition to Sue as Indigent Form. Don't forget to include a signed statement of how you will give \
+	these papers to the defendant, which you can \
+	do in person or by regular mail."
+	await sleep(5000);
+	chatroom.append("<p class='bot-message'>" + result + "</p>");
+
+	result = "Remember to finish this before the time set for the trial.";
+	await sleep(5000);
+	chatroom.append("<p class='bot-message'>" + result + "</p>");
+	//return "nothing";
+}
+
+async function handle_exit_case(chatroom) {
+	await sleep(2000);
 	chatroom.append("<p class='bot-message'>" + "Glad I could help. Wish you all the best for the trial." + "</p>");
 	//return "nothing";
 }
 
-function handle_fail_case(chatroom) {
-	var result = "Sorry, we cannot help you right now. Why do not you try the office of legal aid./n Here are their contact details" +
-	"Legal Aid of North Carolina, Inc. Call 866-219-5262, or apply online at http://ww2.legalaidnc.org/apply";
+async function handle_fail_case(chatroom) {
+	await sleep(2000);
+	var result = "Sorry, we cannot help you right now. Why do not you try the office of legal aid./n Here are their contact details";
+	chatroom.append("<p class='bot-message'>" + result + "</p>");
+
+	result = "Legal Aid of North Carolina, Inc. Call 866-219-5262, or apply online at http://ww2.legalaidnc.org/apply";
+	await sleep(5000);
 	chatroom.append("<p class='bot-message'>" + result + "</p>");
 }
 
