@@ -173,9 +173,6 @@ async function handle_case5(chatroom) {
 }
 
 async function handle_case6(chatroom) {
-	
-
-
 	await sleep(1000);
 	var result = "Here's the usual order of events at the trial.";
 	chatroom.append("<p class='bot-message'>" + result + "</p>");
@@ -201,6 +198,21 @@ async function handle_case6(chatroom) {
 	which is called a judgment and explained in detail in \
 	the next section. No more evidence can be given to \
 	the magistrate after the trial.";
+	await sleep(1500);
+	chatroom.append("<p class='bot-message'>" + result + "</p>");
+}
+
+async function handle_case7(chatroom) {
+	await sleep(1000);
+	var result = "Remember if you lose you can always appeal.";
+	chatroom.append("<p class='bot-message'>" + result + "</p>");
+
+	result = "After the judgment in Small Claims Court, you \
+	can appeal to get a new trial in District Court. To appeal, you must either tell the magistrate at the trial after \
+	the decision is made or file a written Notice of Appeal to \
+	District Court form with the clerk within 10 calendar \
+	days from the date of the judgment. If you file a written \
+	notice, you must mail a copy of it to the other side within 10 calendar days of the judgment.";
 	await sleep(1500);
 	chatroom.append("<p class='bot-message'>" + result + "</p>");
 }
