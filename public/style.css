@@ -43,16 +43,16 @@ section#chatroom {
     /* border: 2px inset rgb(5, 5, 5); */
     height: 80%;
     overflow: auto;
-    margin-left: 22%;
-    margin-right: 22%;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
 section#input_zone {
     height: 7%;
     text-align: center;
     /* background-color: rgb(5, 5, 5); */
-    margin-left: 22%;
-    margin-right: 22%;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
 .vertical-align {
@@ -93,20 +93,24 @@ p.message {
   border-radius: 5px;
   padding: 10px;
   margin: 10px 0;
+
 }
 
 .message:nth-child(even) {
-    background-color: #81F5;
+    background-color: rgba(238, 201, 120, 0.333);
 }
 
 .message:nth-child(odd) {
-    background-color: #81BEF7;
+    background-color: rgba(238, 201, 120, 0.333);
 }
 
 .bot-message {
-    background-color: #4bd624;
+    background-color: #b4f1a3;
     border: 2px solid #dedede;
     border-radius: 5px;
     padding: 10px;
     margin: 10px 0;
+    clear: right
+    
 }
+

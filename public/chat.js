@@ -96,7 +96,7 @@ async function handle_case1(chatroom) {
 async function handle_case2(chatroom) {
 	await sleep(2000);
 	var result = "Something doesn't seem right. You should recieve summons atleast 2 days before the hearing date.";
-	chatroom.append("<p class='bot-message'>" + result + "</p>");
+	chatroom.append("<p class='bot-message text-wrap'>" + result + "</p>");
 	
 	result = "Try informing the magistrate and asking for an extension. In the mean time you should prepare an answer or decide if you want to file a counterclaim.";
 	await sleep(5000);
