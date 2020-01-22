@@ -1,2 +1,3 @@
-# R2CHackathon
-Rise to Code 
+# Rise to Code Hackathon for LexisNexis
+
+Developed a chatbot 
